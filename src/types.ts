@@ -62,6 +62,8 @@ export interface TxRecord {
   from: string;
   to: string;
   amount: string;
+  fee?: string;
+  direction?: 'sent' | 'received' | 'self';
   token?: string;
   timestamp: number;
   status: 'pending' | 'confirmed' | 'failed';
