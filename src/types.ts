@@ -35,6 +35,8 @@ export interface TxParams {
   chain: ChainId;
   to: string;
   amount: string;
+  /** Sender address, pre-derived by the engine's dispatch before calling buildTransaction. */
+  from?: string;
   token?: string;
   memo?: string;
 }
@@ -73,4 +75,8 @@ export interface NetworkConfig {
   rpcUrl: string;
   explorerUrl?: string;
   isTestnet: boolean;
+  /** Bitcoin network identifier matching production WDK: 'bitcoin' | 'testnet' | 'regtest' */
+  network?: string;
+  /** Optional BTC client descriptor or pre-built client instance */
+  btcClient?: unknown;
 }
