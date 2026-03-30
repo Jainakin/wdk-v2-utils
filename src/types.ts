@@ -64,6 +64,8 @@ export interface TxRecord {
   amount: string;
   fee?: string;
   direction?: 'sent' | 'received' | 'self';
+  /** All counterparty addresses (full list, deduplicated) */
+  counterparties?: string[];
   token?: string;
   timestamp: number;
   status: 'pending' | 'confirmed' | 'failed';
